@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gem Incremental</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="currency-container">
+            <h1 class="gold">Gems: <span id="gem_Total">10</span></h1>
+            <h3 class="gold">Currently: <span id="gem_PerSecond">0</span> g/s</h3>
+            <h3 class="gold">Total Multiplier: <span id="multiplier">1</span>.00x</h3>
+        </div>
+        <div class="multi-container">
+            <button id="multi-T1" class="buttons">T1 Upgrade(<span class="text-bold" id="multi-T1-Level">0</span>)<br>+<span class="text-bold">1</span> Gems/s<br> Currently: +<span class="text-green"><span id="button_Value1">0</span>.00</span> <br> Cost: <span class="text-green">10</span> gems</button>
+            <button id="multi-T2" class="buttons">T2 Upgrade(<span class="text-bold" id="multi-T2-Level">0</span>)<br>+<span class="text-bold">2</span>x Gems/s<br> Currently: +<span class="text-green"><span id="button_Value2">1</span>.00</span>x <br> Cost: <span class="text-red">100</span> gems</button>
+        </div>
+    </div>
+</body>
+</html>

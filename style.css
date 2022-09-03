@@ -1,0 +1,60 @@
+body {
+    background-image: linear-gradient(to right bottom, #171A21,#7764ca);
+    background-attachment: fixed;
+    user-select: none;
+}
+
+.text-bold {
+    font-weight: bold;
+    color: #ffe77e;
+}
+
+.text-red {
+    color: #ff6d79;
+}
+
+.text-green {
+    color: #62ff6f;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.multi-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.gold {
+    color: #F5DDDD;
+    margin: 10px auto 10px auto;
+    text-shadow: 4px 4px 4px #171A21;
+}
+
+.buttons {
+    padding: 10px;
+    text-align: center;
+    color: #F5DDDD;
+    margin: 10px auto 10px auto;
+    box-shadow: 1px 1px 4px #171A21;
+    background-image: linear-gradient(to right bottom, #7764ca ,#171A21);
+    border-radius: 0.50rem;
+    border: 0px;
+    transition: 0.3s;
+    transition-timing-function: ease;
+}
+
+.buttons:hover {
+    box-shadow: 2px 2px 8px #ab99fd;
+    transform: scale(5px, 5px);
+    transform: translateY(-3px);
+}
+
+.buttons:active {
+    box-shadow: 0 0px rgb(0, 0, 0);
+    transform: scale(2px, 2px);
+    transform: translateY(3px);
+}
