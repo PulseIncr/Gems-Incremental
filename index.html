@@ -12,12 +12,17 @@
     <div class="container">
         <div class="currency-container">
             <h1 class="gold">Gems: <span id="gem_Total">10</span></h1>
-            <h3 class="gold">Currently: <span id="gem_PerSecond">0</span> g/s</h3>
-            <h3 class="gold">Total Multiplier: <span id="multiplier">1</span>.00x</h3>
+            <h3 class="gold">Currently: +<span id="gemPerSecond">0</span> g/s</h3>
         </div>
-        <div class="multi-container">
-            <button id="multi-T1" class="buttons">T1 Upgrade(<span class="text-bold" id="multi-T1-Level">0</span>)<br>+<span class="text-bold">1</span> Gems/s<br> Currently: +<span class="text-green"><span id="button_Value1">0</span>.00</span> <br> Cost: <span class="text-green">10</span> gems</button>
-            <button id="multi-T2" class="buttons">T2 Upgrade(<span class="text-bold" id="multi-T2-Level">0</span>)<br>+<span class="text-bold">2</span>x Gems/s<br> Currently: +<span class="text-green"><span id="button_Value2">1</span>.00</span>x <br> Cost: <span class="text-red">100</span> gems</button>
+        <div class="upgrades-container">
+            <div class="mines-container">
+                <h3 class="gold">Mines</h1>
+                <button id="mine1_Button" class="buttons">Noob Mine (<span class="text-bold" id="mine1_Level">0</span>)<br>+<span class="text-bold">1</span> Gems/s<br> Currently: +<span class="text-green"><span id="mine1_Effect">0</span>.00</span> <br> Cost: <span id="mine1_Cost" class="text-green">10</span> gems</button>
+            </div>
+            <div class="multiplier-container">
+                <h3 class="gold">Multipliers</h1>
+                <button id="t1_Button" class="buttons">Tier 1 Multiplier (<span class="text-bold" id="t1_Level">0</span>)<br>+<span class="text-bold">2</span>x Gems/s<br> Currently: +<span class="text-green"><span id="t1_Effect">1</span>.00</span>x <br> Cost: <span id="t1_Cost" class="text-red">100</span> gems</button>
+            </div>
         </div>
     </div>
 </body>

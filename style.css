@@ -19,13 +19,8 @@ body {
 
 .container {
     margin: auto;
-    width: 50%;
+    width: 100%;
     text-align: center;
-}
-
-.multi-container {
-    display: flex;
-    flex-direction: column;
 }
 
 .gold {
@@ -34,9 +29,29 @@ body {
     text-shadow: 4px 4px 4px #171A21;
 }
 
+.upgrades-container {
+    padding: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mines-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.multiplier-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
 .buttons {
     padding: 10px;
-    text-align: center;
     color: #F5DDDD;
     margin: 10px auto 10px auto;
     box-shadow: 1px 1px 4px #171A21;
@@ -48,7 +63,7 @@ body {
 }
 
 .buttons:hover {
-    box-shadow: 2px 2px 8px #ab99fd;
+    box-shadow: 1px 1px 8px #ab99fd;
     transform: scale(5px, 5px);
     transform: translateY(-3px);
 }

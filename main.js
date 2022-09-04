@@ -1,52 +1,88 @@
-let currency =
-{
-    gem: 10,
-    gem_Link: document.getElementById("gem_Total"),
-    gem_PerSecond_Link: document.getElementById("gem_PerSecond"),
-    multiplier: 0,
-    multiplier_Link: document.getElementById("multiplier")
+//currencies' object
+let currency = {
+    gems: 1000,
+    gemsPerSecond: 0,
+    element: {
+        gems: document.getElementById("gem_Total"),
+        gemsPerSecond: document.getElementById("gemPerSecond"),
+    }
 }
 
-let upgrade = 
-[
+//mine's object
+let mine = 
+[   
     {
-        button: {
-            effectAdd: 1,
-            level: 0,
-            currently: 0,
-            cost: 10,
-            element: document.getElementById("button_Value1"),
-            buttonElement: document.getElementById("multi-T1")
-        }
-    },{
-        button_Value: {add: 2, multiplier: 0, element: document.getElementById("button_Value2")},
-        button_Level: {level: 0, element: document.getElementById("multi-T2-Level")},
-        button_Cost: 100,
-        button_Link: document.getElementById("multi-T2")
-    },{
-        button: {
-            effectAdd: 2,
-            level: 0,
-            levelLink: document.getElementById("button_Value2")
-            multiplier: 0,
-            cost: 10,
-            effectElement: document.getElementById("button_Value2"),
-            buttonElement: document.getElementById("multi-T2")
-        }
-    }
+        addEffect: 1,
+        effect: 0,
+        level: 0,
+        cost: 10,
+        element: {
+            button: document.getElementById("mine1_Button"),
+            effect: document.getElementById("mine1_Effect"),
+            level: document.getElementById("mine1_Level"),
+            cost: document.getElementById("mine1_Cost"),
+        },
+        onBuy: () => {
+            if (mine[0].cost <= currency.gems) {
+                currency.gems -= mine[0].cost;
+                mine[0].effect += mine[0].addEffect;
+                currency.gemsPerSecond +=  mine[0].addEffect;
+                mine[0].level += 1;
+
+                mine[0].element.effect.innerHTML = mine[0].effect;
+                mine[0].element.level.innerHTML = mine[0].level;
+                currency.element.gems.innerHTML = currency.gems;
+                currency.element.gemsPerSecond.innerHTML = currency.gemsPerSecond;
+            } else {
+                mine[0].element.cost.className = "text-red"
+                alert("Not enough gems");
+            }
+        },
+    },
+
 ]
 
-function buyButton1() {
-    currency.gem -= upgrade[0].button_Cost;
-    upgrade[0].button_Level.level += 1
+//multiplier's object
+let multiplier = 
+[   
+    {
+        addEffect: 2,
+        effect: 0,
+        level: 0,
+        cost: 100,
+        element: {
+            button: document.getElementById("t1_Button"),
+            effect: document.getElementById("t1_Effect"),
+            level: document.getElementById("t1_Level"),
+            cost: document.getElementById("t1_Cost"),
+        },
+        onBuy: () => {
+            if (multiplier[0].cost <= currency.gems) {
+                currency.gems -= multiplier[0].cost;
+                multiplier[0].effect += multiplier[0].addEffect;
+                multiplier[0].level += 1;
 
-    currency.gem_Link.innerHTML = currency.gem;
-    upgrade[0].button_Level.element.innerHTML = upgrade[0].button_Level.level;
-}
+                multiplier[0].element.effect.innerHTML = multiplier[0].effect;
+                multiplier[0].element.level.innerHTML = multiplier[0].level;
+                currency.element.gems.innerHTML = currency.gems;
+                currency.element.gemsPerSecond.innerHTML = currency.gemsPerSecond;
+            } else {
+                multiplier[0].element.cost.className = "text-red"
+                alert("Not enough gems");
+            }
+        }
+    },
 
-function perSecond() {
-    currency
-}
+]
 
-upgrade[0].button_Link.addEventListener("click", buyButton1)
-setInterval(perSecond(), 1000)
+//update function and main loop
+setInterval(() => {
+    let total = currency.gemsPerSecond;
+    currency.gems += total;
+    currency.element.gems.innerHTML = currency.gems;
+}, 1000)
+
+//adding event listeners (not good yet)
+mine[0].element.button.addEventListener("click", mine[0].onBuy)
+multiplier[0].element.button.addEventListener("click", multiplier[0].onBuy)
+
